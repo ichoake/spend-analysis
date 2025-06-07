@@ -1,0 +1,22 @@
+{
+    "sourceFile": "README.md",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1749269576368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1749269654066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,16 +3,29 @@\n A set of scripts and data files for analyzing spending patterns.\n \n ## Getting Started\n \n-1. Clone the repository:\n-   ```\n+1. **Clone the repository:**\n+   ```sh\n    git clone https://github.com/ichoake/spend-analysis.git\n+   cd spend-analysis\n    ```\n-2. Install dependencies (if any).\n \n-3. Run the analysis scripts:\n+2. **(Optional) Set up a virtual environment:**\n+   ```sh\n+   python3 -m venv venv\n+   source venv/bin/activate\n    ```\n+\n+3. **Install dependencies:**\n+   - If you have a `requirements.txt`, run:\n+     ```sh\n+     pip install -r requirements.txt\n+     ```\n+   - Otherwise, install any needed packages manually.\n+\n+4. **Run the analysis scripts:**\n+   ```sh\n    python analyze_transactions_for_patterns.py\n    ```\n \n ## Project Structure\n@@ -20,8 +33,9 @@\n - `analyze_transactions_for_patterns.py` - Main analysis script\n - `pattern_auto_discovery.py` - Pattern discovery script\n - `script/` - Additional scripts\n - `docs/` - Documentation\n+- `AccountHistory.csv`, `CampusAccountHistory.csv` - Example data files\n \n ## License\n \n MIT\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1749269576368,
+            "name": "Commit-0",
+            "content": "# Spend Analysis\n\nA set of scripts and data files for analyzing spending patterns.\n\n## Getting Started\n\n1. Clone the repository:\n   ```\n   git clone https://github.com/ichoake/spend-analysis.git\n   ```\n2. Install dependencies (if any).\n\n3. Run the analysis scripts:\n   ```\n   python analyze_transactions_for_patterns.py\n   ```\n\n## Project Structure\n\n- `analyze_transactions_for_patterns.py` - Main analysis script\n- `pattern_auto_discovery.py` - Pattern discovery script\n- `script/` - Additional scripts\n- `docs/` - Documentation\n\n## License\n\nMIT"
+        }
+    ]
+}
