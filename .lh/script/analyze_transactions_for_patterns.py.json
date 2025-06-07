@@ -1,0 +1,18 @@
+{
+    "sourceFile": "script/analyze_transactions_for_patterns.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1749264107544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1749264107544,
+            "name": "Commit-0",
+            "content": "#!/usr/bin/env python3\n\nimport pandas as pd\n\ncsv_path = input(\"Enter path to your transaction CSV: \").strip()\ndf = pd.read_csv(csv_path)\n\nprint(\"\\n--- Column Names ---\")\nprint(df.columns.tolist())\n\nif 'Description' not in df.columns:\n    raise ValueError(\"CSV must have a 'Description' column!\")\n\nprint(\"\\n--- 50 Most Common Descriptions (Vendor Strings) ---\")\ndesc_counts = df['Description'].value_counts().head(50)\nprint(desc_counts.to_string())\n\nprint(\"\\n--- Most Common Words/Phrases in Descriptions ---\")\nfrom collections import Counter\nwords = df['Description'].astype(str).str.upper().str.split(expand=True).stack()\ncommon_words = Counter(words).most_common(40)\nfor word, count in common_words:\n    print(f\"{word:15} {count}\")\n\nprint(\"\\n--- Top 20 Vendors by Unique Transaction Count ---\")\ntop_vendors = df['Description'].value_counts().head(20)\nprint(top_vendors)\n\nprint(\"\\n--- Transaction Type Frequency (by first word) ---\")\nfirst_words = df['Description'].astype(str).str.split().str[0].str.upper().value_counts().head(20)\nprint(first_words)\n\nif 'Debit' in df.columns:\n    print(\"\\n--- Outgoing (Debit) Amount Distribution ---\")\n    print(df['Debit'].describe())\nif 'Credit' in df.columns:\n    print(\"\\n--- Incoming (Credit) Amount Distribution ---\")\n    print(df['Credit'].describe())\n\nprint(\"\\n--- Unique Descriptions: \", df['Description'].nunique())\n\n# Optionally: Export most common descriptions for your regex pattern mapping\ndesc_counts.to_csv(\"most_common_descriptions.csv\")\n"
+        }
+    ]
+}

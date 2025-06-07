@@ -1,0 +1,10 @@
+Type_Clue,Count,GPT_Label_Regex
+PAYMENT ID,59,Other | .*
+WEB PMTS ID,38,Other | .*
+PAYOUT ID,20,Other | .*
+SUNO INC. ID,3,Other | .*
+MOBILE DEP CO,2,Other | .*
+XAI LLC ID,1,Other | .*
+AIRTABLE.c ID,1,Other | .*
+QUORA.COM ID,1,Other | .*
+E4F7Z8C ID,1,Other | .*
